@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -37,7 +35,11 @@ body {
     );
   letter-spacing: 0.3px;
 }
-
+header p {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0 0 10px rgba(255,140,0,0.5);
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  line-height: 1.3;
+}
 a {
   text-decoration: none;
 }

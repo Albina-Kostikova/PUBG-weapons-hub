@@ -1,24 +1,43 @@
-import { title } from 'process'
-
-// src/app/components/Header.tsx
 export default function Header() {
   return (
-    <header className="p-10 h-130 text-center bg-[#111111] bg-[url('/img/main-bg.jpg')] bg-cover bg-top">
-      <h1 className="text-5xl font-bold m-10">PUBG Weapon Hub</h1>
-      <p className="text-gray-400">Сравнивай оружие, аксессуары и реальные цены</p>
-      <div className="flex justify-evenly">{[
-        { title: 'Собрать свой набор' },
-        { title: 'Битва оружий' },
-        { title: 'Вероятность найти оружие' },
-        { title: 'Реальные цены' },
-      ].map((btn, idx) => (
-        <button
-          key={idx}
-          className="w-50 h-14 text-lg rounded-b-sm bg-[#23232379] hover:bg-[#f0bb0bae] hover:text-black transition-transform transform hover:scale-105">
-          {btn.title}
-        </button>
-      ))}
+    <header className="relative flex flex-col items-center justify-center min-h-125 text-center 
+                       bg-[#111111] bg-[url('/img/main-bg.jpg')] bg-cover bg-top">
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/80 to-transparent pointer-events-none"></div>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg mb-6 z-10 absolute top-5">
+        PUBG Weapon Hub
+      </h1>
+      <div className="flex flex-wrap gap-100 justify-center z-10 absolute top-25">
+        <div className="flex gap-4">
+          {[{ title: 'Собрать набор', link: '/build' },
+            { title: 'Битва оружий', link: '/battle' }
+          ].map((btn, idx) => (
+            <a
+              key={idx}
+              href={btn.link}
+              className="px-6 py-3 md:px-8 md:py-4 bg-[#232323cc] hover:bg-[#f0bb0bae] text-white hover:text-black font-semibold rounded-lg uppercase tracking-wide transition-transform transform hover:scale-105"
+            >
+              {btn.title}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex gap-4 mt-4 md:mt-0">
+          {[{ title: 'Оружие на карте', link: '/possibility' },
+            { title: 'Реальные цены', link: '/prices' }
+          ].map((btn, idx) => (
+            <a
+              key={idx}
+              href={btn.link}
+              className="px-6 py-3 md:px-8 md:py-4 bg-[#232323cc] hover:bg-[#f0bb0bae] text-white hover:text-black font-semibold rounded-lg uppercase tracking-wide transition-transform transform hover:scale-105"
+            >
+              {btn.title}
+            </a>
+          ))}
+        </div>
       </div>
+      <p className="absolute text-lg md:text-2xl text-orange-400 font-bold uppercase tracking-wider bottom-15 z-10">
+        Сравнивай оружие, аксессуары и реальные цены
+      </p>
     </header>
   )
 }
