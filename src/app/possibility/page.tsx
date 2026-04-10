@@ -127,15 +127,15 @@ export default function PossibilityPage() {
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <span className="inline-flex rounded-full border border-yellow-400/35 bg-yellow-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-yellow-300">
-                Map Weapon Guide
+                Weapon Map Guide
               </span>
 
               <h1 className="pubg-title mt-6 max-w-3xl text-3xl leading-tight md:text-5xl">
-                Карты PUBG с акцентом на темп боя и зоны для высадки
+                Карты PUBG с оружием, рекомендациями <br></br>и зонами для высадки
               </h1>
 
               <p className="pubg-subtitle mt-5 max-w-2xl text-base leading-7 md:text-lg">
-                Большие схемы карт, короткие ориентиры по стилю матча и ключевые точки, куда можно падать в начале
+                Большие схемы карт, короткие ориентиры по стилю игры и ключевые точки, куда можно прыгать в начале
                 катки.
               </p>
 
@@ -158,20 +158,22 @@ export default function PossibilityPage() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {mapGuides.slice(0, 4).map(map => (
+              {mapGuides.slice(0, 4).map((map, index) => (
                 <a
                   key={map.id}
                   href={`#${map.id}`}
-                  className="group relative overflow-hidden rounded-[26px] border border-[#363636] bg-[#171717]">
+                  className="group relative overflow-hidden rounded-[15px] border border-[#363636] bg-[#171717]">
                   <img
                     src={map.image}
                     alt={map.name}
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                    decoding="async"
                     className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black via-black/25 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-xs font-bold uppercase tracking-[0.28em] text-yellow-300">{map.lootLevel}</p>
-                    <h2 className="mt-2 text-2xl font-black uppercase tracking-[0.16em] text-white">{map.name}</h2>
+                  <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+                    <h2 className="text-2xl font-black uppercase tracking-[0.16em] text-white">{map.name}</h2>
                   </div>
                 </a>
               ))}
@@ -198,23 +200,27 @@ export default function PossibilityPage() {
 
       <section className="pubg-section bg-[#151515]">
         <div className="mx-auto w-[96vw] max-w-screen-2xl space-y-10">
-          {mapGuides.map(map => (
+          {mapGuides.map((map, index) => (
             <article
               key={map.id}
               id={map.id}
-              className="scroll-mt-36 overflow-hidden rounded-4xl border border-[#2f2f2f] bg-[#111111] shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+              className="scroll-mt-36 overflow-hidden rounded-2xl border border-[#2f2f2f] bg-[#111111] shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
               <div className="grid gap-0 lg:grid-cols-[1.35fr_0.65fr]">
                 <div className="relative min-h-70 border-b border-[#2b2b2b] lg:min-h-[78vh] lg:border-r lg:border-b-0">
-                  <img src={map.image} alt={map.name} className="absolute inset-0 h-full w-full object-cover" />
+                  <img
+                    src={map.image}
+                    alt={map.name}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/10 to-transparent" />
 
                   <div className="relative flex h-full flex-col justify-between p-6 md:p-8">
-                    <div className="max-w-xl rounded-3xl border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
-                      <p className="text-xs font-bold uppercase tracking-[0.28em] text-yellow-300">{map.lootLevel}</p>
-                      <h2 className="mt-2 text-3xl font-black uppercase tracking-[0.16em] text-white md:text-5xl">
+                    <div className="z-10 w-fit rounded-3xl border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
+                      <h2 className="text-3xl font-black uppercase tracking-[0.16em] text-white md:text-5xl">
                         {map.name}
                       </h2>
-                      <p className="mt-3 text-sm leading-7 text-[#ececec] md:text-base">{map.summary}</p>
                     </div>
 
                     <div />
@@ -224,43 +230,42 @@ export default function PossibilityPage() {
                 <div className="flex flex-col justify-between p-6 md:p-8">
                   <div>
                     <div className="grid gap-4">
-                      <div className="rounded-3xl border border-[#2d2d2d] bg-[#171717] p-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.22em] text-yellow-400">Рельеф</p>
-                        <p className="mt-3 text-sm leading-7 text-[#e2e2e2]">{map.terrain}</p>
+                      <div className="rounded-xl border border-[#2d2d2d] bg-[#171717] p-5">
+                        <p className="text-base font-bold uppercase tracking-[0.22em] text-yellow-400">
+                          Стратегия
+                        </p>
+                        <p className="mt-3 text-base leading-7 text-[#e2e2e2]">{map.pace}</p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {map.dropZones.map(zone => (
+                            <span
+                              key={zone}
+                              className="rounded-full border border-[#393939] bg-[#111111] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#e4e4e4]">
+                              {zone}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="rounded-xl border border-[#2d2d2d] bg-[#171717] p-5">
+                        <p className="text-base font-bold uppercase tracking-[0.22em] text-yellow-400">
+                          Особенности
+                        </p>
+                        <p className="mt-3 text-base leading-7 text-[#e2e2e2]">{map.terrain}</p>
+                        <p className="mt-2 text-base leading-7 text-[#d2d2d2]">{map.summary}</p>
                       </div>
 
-                      <div className="rounded-3xl border border-[#2d2d2d] bg-[#171717] p-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.22em] text-yellow-400">Темп</p>
-                        <p className="mt-3 text-sm leading-7 text-[#e2e2e2]">{map.pace}</p>
-                      </div>
                     </div>
                   </div>
 
                   <div className="mt-8 grid gap-6">
-                    <div className="rounded-3xl border border-[#2d2d2d] bg-[#171717] p-5">
-                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-yellow-400">
-                        Лучшие зоны высадки
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {map.dropZones.map(zone => (
-                          <span
-                            key={zone}
-                            className="rounded-full border border-[#393939] bg-[#111111] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#e4e4e4]">
-                            {zone}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="rounded-3xl border border-[#2d2d2d] bg-[#171717] p-5">
-                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-yellow-400">
-                        Интересные места, которые часто пропускают
+                    <div className="rounded-xl border border-[#2d2d2d] bg-[#171717] p-5">
+                      <p className="text-base font-bold uppercase tracking-[0.22em] text-yellow-400">
+                        Интересные места
                       </p>
                       <div className="mt-4 grid gap-3">
                         {map.hiddenSpots.map(spot => (
                           <div
                             key={spot}
-                            className="rounded-2xl border border-[#393939] bg-[#111111] px-4 py-3 text-sm leading-6 text-[#d6d6d6]">
+                            className="rounded-xl border border-[#393939] bg-[#111111] px-4 py-3 text-base leading-6 text-[#d6d6d6]">
                             {spot}
                           </div>
                         ))}

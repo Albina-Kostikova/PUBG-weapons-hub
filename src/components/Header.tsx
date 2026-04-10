@@ -103,7 +103,7 @@ export default function Header() {
           ))}
         </div>
 
-        <p className="absolute bottom-15 z-10 max-w-3xl px-4 text-lg font-bold uppercase tracking-wider text-orange-400 md:text-2xl">
+        <p className="absolute bottom-15 z-10 max-w-3xl px-4 text-lg font-bold uppercase tracking-wider text-[#f0b90b] md:text-2xl">
           Сравнивай оружие, аксессуары и реальные цены
         </p>
       </header>

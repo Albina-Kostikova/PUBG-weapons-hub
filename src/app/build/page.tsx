@@ -77,6 +77,7 @@ export default function BuildPage() {
   const [selectedMagazine, setSelectedMagazine] = useState<Magazine | undefined>(undefined)
   const [selectedGrip, setSelectedGrip] = useState<Grip | undefined>(undefined)
   const [selectedStock, setSelectedStock] = useState<Stock | undefined>(undefined)
+  const [searchInput, setSearchInput] = useState('')
 
   const setupStats = useMemo(() => {
     if (!selectedWeapon) {
@@ -108,6 +109,7 @@ export default function BuildPage() {
   )
 
   const selectWeapon = (weapon: Weapon) => {
+    setSearchInput('')
     setSelectedWeapon(weapon)
     setSelectedAttachment(undefined)
     setSelectedMuzzle(undefined)
@@ -128,26 +130,52 @@ export default function BuildPage() {
     return item.attachableTo.includes(selectedWeapon.type)
   }
 
+  const isMatched = (name: string) => {
+    const normalizedQuery = searchInput.trim().toLocaleLowerCase()
+
+    if (!normalizedQuery) {
+      return false
+    }
+
+    return name.toLocaleLowerCase().includes(normalizedQuery)
+  }
+
   return (
     <section className="pubg-section">
       <div className="pubg-container__build ">
         <h2 className="pubg-title -mt-4 mb-10 text-center text-2xl md:text-3xl">Собрать свой набор</h2>
-
+        <div className="search h-20 text-center">
+          <input
+            type="text"
+            placeholder="Поиск по названию..."
+            value={searchInput}
+            onChange={e => setSearchInput(e.target.value)}
+            className="w-[40%] rounded-md border border-[#444] bg-[#1f1f1f] px-4 py-2 text-sm text-[#cfcfcf] focus:outline-none focus:ring-2 focus:ring-[#f0b90b]/50"
+          />
+        </div>
         <div className="pubg-card mb-6 p-4">
           <h3 className="pubg-title mb-3 text-lg">Все оружие</h3>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8">
-            {sortedWeapons.map(weapon => (
-              <button
-                key={weapon.name}
-                type="button"
-                onClick={() => selectWeapon(weapon as Weapon)}
-                className={`rounded-md border px-2 py-2 text-left text-xs transition ${
-                  selectedWeapon?.name === weapon.name ? 'border-[#f0b90b] bg-[#2a2412]' : 'border-[#444] bg-[#1f1f1f]'
-                }`}>
-                <p className="font-semibold text-[#f5f5f5]">{weapon.name}</p>
-                <p className="text-[#cfcfcf]">Урон: {weapon.damage}</p>
-              </button>
-            ))}
+            {sortedWeapons.map(weapon => {
+              const match = isMatched(weapon.name)
+
+              return (
+                <button
+                  key={weapon.name}
+                  type="button"
+                  onClick={() => selectWeapon(weapon as Weapon)}
+                  className={`rounded-md border px-2 py-2 text-left text-xs transition ${
+                    selectedWeapon?.name === weapon.name
+                      ? 'border-[#f0b90b] bg-[#2a2412]'
+                      : match
+                        ? 'border-orange-400 bg-orange-950/40'
+                        : 'border-[#444] bg-[#1f1f1f]'
+                  }`}>
+                  <p className="font-semibold text-[#f5f5f5]">{weapon.name}</p>
+                  <p className="text-[#cfcfcf]">Урон: {weapon.damage}</p>
+                </button>
+              )
+            })}
           </div>
         </div>
 
@@ -163,6 +191,7 @@ export default function BuildPage() {
                       ? selectedAttachment?.name === item.name
                       : selectedMuzzle?.name === item.name
                     const isAttachable = isItemAttachable(item)
+                    const match = isMatched(item.name)
 
                     return (
                       <li
@@ -170,9 +199,11 @@ export default function BuildPage() {
                         className={`rounded-md border px-2 py-2 ${
                           isSelected
                             ? 'border-[#f0b90b] bg-[#2a2412]'
-                            : isAttachable
-                              ? 'border-[#444] bg-[#1f1f1f]'
-                              : 'border-[#333] bg-[#191919] opacity-50'
+                            : match
+                              ? 'border-orange-400 bg-orange-950/40'
+                              : isAttachable
+                                ? 'border-[#444] bg-[#1f1f1f]'
+                                : 'border-[#333] bg-[#191919] opacity-50'
                         }`}>
                         <button
                           type="button"
@@ -180,6 +211,8 @@ export default function BuildPage() {
                             if (!isAttachable) {
                               return
                             }
+
+                            setSearchInput('')
 
                             if (isScopeSection) {
                               const scope = attachmentsData.scopes.find(scopeItem => scopeItem.name === item.name)
@@ -304,6 +337,7 @@ export default function BuildPage() {
                     {section.items.map(item => {
                       const isSelected = selectedStock?.name === item.name
                       const isAttachable = isItemAttachable(item)
+                      const match = isMatched(item.name)
 
                       return (
                         <li
@@ -311,9 +345,11 @@ export default function BuildPage() {
                           className={`rounded-md border px-2 py-2 ${
                             isSelected
                               ? 'border-[#f0b90b] bg-[#2a2412]'
-                              : isAttachable
-                                ? 'border-[#444] bg-[#1f1f1f]'
-                                : 'border-[#333] bg-[#191919] opacity-50'
+                              : match
+                                ? 'border-orange-400 bg-orange-950/40'
+                                : isAttachable
+                                  ? 'border-[#444] bg-[#1f1f1f]'
+                                  : 'border-[#333] bg-[#191919] opacity-50'
                           }`}>
                           <button
                             type="button"
@@ -321,6 +357,7 @@ export default function BuildPage() {
                               if (!isAttachable) {
                                 return
                               }
+                              setSearchInput('')
                               const stock = stocksData.stocks.find(stockItem => stockItem.name === item.name)
                               setSelectedStock(
                                 selectedStock?.name === item.name ? undefined : (stock as Stock | undefined),
@@ -360,6 +397,7 @@ export default function BuildPage() {
                     }
 
                     const isAttachable = isItemAttachable(item)
+                    const match = isMatched(item.name)
 
                     return (
                       <li
@@ -367,9 +405,11 @@ export default function BuildPage() {
                         className={`rounded-md border px-2 py-2 ${
                           isSelected
                             ? 'border-[#f0b90b] bg-[#2a2412]'
-                            : isAttachable
-                              ? 'border-[#444] bg-[#1f1f1f]'
-                              : 'border-[#333] bg-[#191919] opacity-50'
+                            : match
+                              ? 'border-orange-400 bg-orange-950/40'
+                              : isAttachable
+                                ? 'border-[#444] bg-[#1f1f1f]'
+                                : 'border-[#333] bg-[#191919] opacity-50'
                         }`}>
                         <button
                           type="button"
@@ -377,6 +417,8 @@ export default function BuildPage() {
                             if (!isAttachable) {
                               return
                             }
+
+                            setSearchInput('')
 
                             if (section.title === 'Магазины') {
                               const magazine = magazinesData.magazines.find(

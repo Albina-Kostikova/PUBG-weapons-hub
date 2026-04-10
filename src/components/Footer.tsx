@@ -5,6 +5,7 @@ export default function Footer() {
                       bg-[url('/img/footer-bg.jpg')] bg-cover bg-position-[center_18%]
                        relative">
       <div className="absolute inset-0 bg-black/50 pointer-events-none"></div>
+      <div className="absolute top-14 left-35 text-[#dcdcdcd6] pointer-events-none">Соцсети</div>
       <div className="footer-icons flex gap-4 z-20 ml-10 mt-6">
         <a
           href="https://vk.com/pubg"
