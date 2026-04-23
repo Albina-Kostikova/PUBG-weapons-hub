@@ -135,7 +135,7 @@ export default function PossibilityPage() {
               </h1>
 
               <p className="pubg-subtitle mt-5 max-w-2xl text-base leading-7 md:text-lg">
-                Большие схемы карт, короткие ориентиры по стилю игры и ключевые точки, куда можно прыгать в начале
+                Большие схемы карт, короткие ориентиры по стилю игры и ключевые точки, куда прыгать в начале
                 катки.
               </p>
 

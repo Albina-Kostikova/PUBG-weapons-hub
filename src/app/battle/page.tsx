@@ -125,7 +125,7 @@ export default function BattlePage() {
         ) : (
           <div className="text-center text-[#555] select-none">
             <p className="text-4xl mb-2 font-thin">+</p>
-            <p className="text-xs uppercase tracking-wider">{side === 'left' ? 'Левое оружие' : 'Правое оружие'}</p>
+            <p className="text-xs uppercase tracking-wider">{side === 'left' ? 'Оружие 1' : 'Оружие 2'}</p>
             {isActive && <p className="mt-2 text-[10px] text-[#f0b90b] uppercase tracking-wider">Выберите из списка</p>}
           </div>
         )}
@@ -145,7 +145,7 @@ export default function BattlePage() {
 
         <div className="grid grid-cols-2 gap-4 mt-4 mb-6">
           <div className="pubg-card p-5">
-            <h3 className="pubg-title text-sm mb-3 text-blue-300">{leftWeapon ? leftWeapon.name : 'Левое оружие'}</h3>
+            <h3 className="pubg-title text-sm mb-3 text-blue-300">{leftWeapon ? leftWeapon.name : 'Оружие 1'}</h3>
             {leftWeapon ? (
               <p className="text-base text-[#d6d6d6] leading-relaxed">{getWeaponComment(leftWeapon, rangeMode)}</p>
             ) : (
@@ -153,7 +153,7 @@ export default function BattlePage() {
             )}
           </div>
           <div className="pubg-card p-5">
-            <h3 className="pubg-title text-sm mb-3 text-red-300">{rightWeapon ? rightWeapon.name : 'Правое оружие'}</h3>
+            <h3 className="pubg-title text-sm mb-3 text-red-300">{rightWeapon ? rightWeapon.name : 'Оружие 2'}</h3>
             {rightWeapon ? (
               <p className="text-base text-[#d6d6d6] leading-relaxed">{getWeaponComment(rightWeapon, rangeMode)}</p>
             ) : (
