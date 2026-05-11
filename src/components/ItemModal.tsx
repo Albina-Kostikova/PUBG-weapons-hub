@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 type StatEntry = { label: string; value: string | number; positive?: boolean }
 type AnyItem = Record<string, any>
@@ -108,10 +109,12 @@ export default function ItemModal({ item, category, onClose }: Props) {
           <div className="flex flex-col items-center">
             <div className="relative w-full rounded-2xl border border-[#2a2a2a] bg-[#1a1a1a] p-8 flex items-center justify-center min-h-52 overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_60%,rgba(245,158,11,0.12),transparent_70%)]" />
-              <img
+              <Image
                 src={item.image}
                 alt={item.name}
-                className="relative w-full max-h-44 object-contain drop-shadow-[0_0_24px_rgba(245,158,11,0.35)]"
+                width={300}
+                height={180}
+                className="relative w-full max-h-44 translate-y-9 object-contain drop-shadow-[0_0_24px_rgba(245,158,11,0.35)]"
               />
             </div>
             <Link

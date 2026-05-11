@@ -84,7 +84,7 @@ export default function Header() {
 
       <header
         ref={headerRef}
-        className="relative flex min-h-125 flex-col items-center justify-center overflow-hidden bg-[#111111] bg-[url('/img/main-bg.jpg')] bg-cover bg-top text-center">
+        className="relative flex min-h-125 flex-col items-center justify-center overflow-hidden bg-[#111111] bg-[url('/img/main-bg.webp')] bg-cover bg-top text-center">
         <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/80 to-transparent pointer-events-none"></div>
 
         <Link

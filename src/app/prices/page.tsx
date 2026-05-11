@@ -1,5 +1,6 @@
-'use client'
+﻿'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 import weaponsData from '@/data/weapons.json'
 import attachmentsData from '@/data/attachments.json'
 import gripsData from '@/data/grips.json'
@@ -18,7 +19,7 @@ export default function Prices() {
   const [modalItem, setModalItem] = useState<{ item: PriceAttachmentItem; category: ModalCategory } | null>(null)
 
   const renderPrice = (value?: number) =>
-    value !== undefined ? <p className="pubg-price mt-2">Цена: ${value}</p> : null
+    value !== undefined ? <p className="pubg-price mt-2">Цена: </p> : null
 
   return (
     <div className="min-h-screen">
@@ -52,7 +53,9 @@ export default function Prices() {
           <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
             {weaponsData.weapons.map(weapon => (
               <div key={weapon.name} className="pubg-card flex flex-col items-center p-4">
-                <img src={weapon.image} alt={weapon.name} className="mb-4 h-28 w-full object-contain" />
+                <div className="relative mb-4 h-28 w-full overflow-hidden rounded-lg bg-[radial-gradient(circle,rgba(255,230,150,0.15)_0%,rgba(255,255,255,0.06)_50%,transparent_80%)]">
+                  <Image width={200} height={112} src={weapon.image} alt={weapon.name} className="h-full w-full scale-125 object-cover" />
+                </div>
                 <h3 className="pubg-title text-center text-base">{weapon.name}</h3>
                 <p className="text-sm text-[#cfcfcf]">Урон: {weapon.damage}</p>
                 <p className="text-sm text-[#a3a3a3]">Тип: {weapon.type}</p>
@@ -72,7 +75,9 @@ export default function Prices() {
                 key={scope.id}
                 onClick={() => setModalItem({ item: scope, category: 'scope' })}
                 className="pubg-card flex flex-col items-center p-4">
-                <img src={scope.image} alt={scope.name} className="mb-4 h-28 w-full object-contain" />
+                <div className="relative mb-4 h-28 w-full overflow-hidden rounded-lg bg-[radial-gradient(circle,rgba(255,230,150,0.15)_0%,rgba(255,255,255,0.06)_50%,transparent_80%)]">
+                  <Image width={200} height={112} src={scope.image} alt={scope.name} className="h-full w-full object-contain scale-120 translate-y-7" />
+                </div>
                 <h3 className="pubg-title text-center text-base">{scope.name}</h3>
                 <p className="text-sm text-[#cfcfcf]">Zoom: {scope.zoom}x</p>
                 <p className="text-sm text-[#a3a3a3]">Accuracy: +{scope.accuracyBonus}</p>
@@ -92,7 +97,9 @@ export default function Prices() {
                 key={grip.id}
                 onClick={() => setModalItem({ item: grip, category: 'grip' })}
                 className="pubg-card flex flex-col items-center p-4">
-                <img src={grip.image} alt={grip.name} className="mb-4 h-28 w-full object-contain" />
+                <div className="relative mb-4 h-28 w-full overflow-hidden rounded-lg bg-[radial-gradient(circle,rgba(255,230,150,0.15)_0%,rgba(255,255,255,0.06)_50%,transparent_80%)]">
+                  <Image width={200} height={112} src={grip.image} alt={grip.name} className="h-full w-full object-contain scale-120 translate-y-7" />
+                </div>
                 <h3 className="pubg-title text-center text-base">{grip.name}</h3>
                 <p className="text-sm text-[#cfcfcf]">Вертикальная отдача: -{grip.recoilVertical}</p>
                 <p className="text-sm text-[#a3a3a3]">Горизонтальная отдача: -{grip.recoilHorizontal}</p>
@@ -112,7 +119,9 @@ export default function Prices() {
                 key={muzzle.id}
                 onClick={() => setModalItem({ item: muzzle, category: 'muzzle' })}
                 className="pubg-card flex flex-col items-center p-4">
-                <img src={muzzle.image} alt={muzzle.name} className="mb-4 h-28 w-full object-contain" />
+                <div className="relative mb-4 h-28 w-full overflow-hidden rounded-lg bg-[radial-gradient(circle,rgba(255,230,150,0.15)_0%,rgba(255,255,255,0.06)_50%,transparent_80%)]">
+                  <Image width={200} height={112} src={muzzle.image} alt={muzzle.name} className="h-full w-full object-contain scale-120 translate-y-7" />
+                </div>
                 <h3 className="pubg-title text-center text-base">{muzzle.name}</h3>
                 <p className="text-sm text-[#cfcfcf]">Вертикальная отдача: -{muzzle.recoilVertical}</p>
                 <p className="text-sm text-[#a3a3a3]">Горизонтальная отдача: -{muzzle.recoilHorizontal}</p>
@@ -135,7 +144,9 @@ export default function Prices() {
                 key={mag.id}
                 onClick={() => setModalItem({ item: mag, category: 'magazine' })}
                 className="pubg-card flex flex-col items-center p-4">
-                <img src={mag.image} alt={mag.name} className="mb-4 h-28 w-full object-contain" />
+                <div className="relative mb-4 h-28 w-full overflow-hidden rounded-lg bg-[radial-gradient(circle,rgba(255,230,150,0.15)_0%,rgba(255,255,255,0.06)_50%,transparent_80%)]">
+                  <Image width={200} height={112} src={mag.image} alt={mag.name} className="h-full w-full object-contain scale-120 translate-y-7" />
+                </div>
                 <h3 className="pubg-title text-center text-base">{mag.name}</h3>
                 <p className="text-sm text-[#cfcfcf]">Вместимость: +{mag.capacityBonus}</p>
                 <p className="text-sm text-[#a3a3a3]">Скорость перезарядки: +{mag.reloadSpeedBonus}</p>
@@ -151,11 +162,10 @@ export default function Prices() {
           <h2 className="pubg-title mb-8 text-2xl md:text-3xl">Приклады</h2>
           <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
             {stocksData.stocks.map(stock => (
-              <button
-                key={stock.id}
-                onClick={() => setModalItem({ item: stock, category: 'stock' })}
-                className="pubg-card flex flex-col items-center p-4">
-                <img src={stock.image} alt={stock.name} className="mb-4 h-28 w-full object-contain" />
+              <button key={stock.id} onClick={() => setModalItem({ item: stock, category: 'stock' })} className="pubg-card flex flex-col items-center p-4">
+                <div className="relative mb-4 h-28 w-full overflow-hidden rounded-lg bg-[radial-gradient(circle,rgba(255,230,150,0.15)_0%,rgba(255,255,255,0.06)_50%,transparent_80%)]">
+                  <Image width={200} height={112} src={stock.image} alt={stock.name} className="h-full w-full object-contain scale-120 translate-y-7" />
+                </div>
                 <h3 className="pubg-title text-center text-base">{stock.name}</h3>
                 <p className="text-sm text-[#cfcfcf]">Вертикальная отдача: -{stock.recoilVertical}</p>
                 <p className="text-sm text-[#a3a3a3]">Горизонтальная отдача: -{stock.recoilHorizontal}</p>

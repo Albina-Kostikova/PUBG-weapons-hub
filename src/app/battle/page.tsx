@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import weaponsData from '@/data/weapons.json'
 import type { Weapon } from '@/types/items'
-
+import Image from 'next/image'
 type RangeMode = 'close' | 'medium' | 'long'
 
 const RANGE_LABELS: Record<RangeMode, string> = {
@@ -92,7 +92,7 @@ export default function BattlePage() {
         }`}>
         {weapon ? (
           <div className="relative w-full min-h-52 overflow-hidden rounded-sm border border-[#2f2f2f] bg-[#171717] p-3">
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0f0f0f] via-[#121212]/95 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#0f0f0f] via-[#121212]/95 to-transparent" />
             <div className="relative z-10 w-[58%]">
               <h3 className="pubg-title text-sm mb-3 text-left">{weapon.name}</h3>
               <div className="text-xs text-[#cfcfcf] space-y-1 max-w-45">
@@ -113,9 +113,11 @@ export default function BattlePage() {
             </div>
             <div className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-[60%] items-center justify-end pr-1">
               <div className="absolute right-2 h-36 w-36 rounded-full bg-[#fff8d6]/35 blur-2xl" />
-              <img
+              <Image
                 src={weapon.image}
                 alt={weapon.name}
+                height={176}
+                width={240}
                 className={`h-44 w-auto object-contain drop-shadow-[0_12px_22px_rgba(0,0,0,0.65)] ${
                   isActive ? 'opacity-85' : 'opacity-70'
                 }`}
@@ -177,7 +179,7 @@ export default function BattlePage() {
             </button>
           ))}
         </div>
-          
+
         <div className="mb-4 text-center">
           <input
             type="text"
@@ -187,7 +189,7 @@ export default function BattlePage() {
             className="w-[40%] rounded-sm border border-[#444] bg-[#1f1f1f] px-4 py-2 text-sm text-[#cfcfcf] focus:outline-none focus:ring-2 focus:ring-[#f0b90b]/50"
           />
         </div>
-          
+
         <div className="pubg-card p-4 mb-6">
           <h3 className="pubg-title text-sm mb-3 text-[#cfcfcf]">Все оружие — по убыванию урона</h3>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8">
@@ -216,8 +218,6 @@ export default function BattlePage() {
             })}
           </div>
         </div>
-
-        
       </div>
     </section>
   )

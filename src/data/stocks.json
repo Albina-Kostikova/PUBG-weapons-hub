@@ -11,8 +11,8 @@
       "attachableTo": ["AR", "SMG"],
       "image": "/img/tacticalStockRiffles.png",
       "prices": [
-        { "name": "Magpul MOE Tactical Stock", "priceUSD": 89.9 },
-        { "name": "PTS EPF2 Tactical Stock", "priceUSD": 79.9 }
+        { "name": "Magpul MOE Tactical Stock", "priceUSD": 64.99 },
+        { "name": "PTS Enhanced Polymer Stock", "priceUSD": 74.99 }
       ]
     },
     {
@@ -26,8 +26,8 @@
       "attachableTo": ["DMR", "Sniper"],
       "image": "/img/cheeekPad_Sniper.png",
       "prices": [
-        { "name": "Magpul Cheek Riser Pad", "priceUSD": 24.9 },
-        { "name": "Tactical Airsoft Cheek Pad", "priceUSD": 19.9 }
+        { "name": "Magpul Rifle Cheek Riser", "priceUSD": 29.99 },
+        { "name": "Tactical Sniper Cheek Pad", "priceUSD": 18.99 }
       ]
     },
     {
@@ -40,7 +40,9 @@
       "weight": 1,
       "attachableTo": ["SMG"],
       "image": "/img/stock_QT_UZI.png",
-      "prices": [{ "name": "Micro UZI Tactical Stock Replica", "priceUSD": 16.9 }]
+      "prices": [
+        { "name": "Micro UZI Folding Stock Replica", "priceUSD": 39.99 }
+      ]
     },
     {
       "id": 4,
@@ -52,7 +54,9 @@
       "weight": 1,
       "attachableTo": ["Shotgun"],
       "image": "/img/bulletloop_Shotgun.png",
-      "prices": [{ "name": "Shotgun Bullet Loops", "priceUSD": 9.9 }]
+      "prices": [
+        { "name": "Shotgun Shell Holder", "priceUSD": 14.99 }
+      ]
     },
     {
       "id": 5,
@@ -64,7 +68,9 @@
       "weight": 1,
       "attachableTo": ["Crossbow"],
       "image": "/img/Crossbow_Q.png",
-      "prices": [{ "name": "Crossbow Quiver", "priceUSD": 12.9 }]
+      "prices": [
+        { "name": "Tactical Crossbow Quiver", "priceUSD": 34.99 }
+      ]
     },
     {
       "id": 6,
@@ -76,7 +82,9 @@
       "weight": 1,
       "attachableTo": ["AR"],
       "image": "/img/Full_Auto_Mod.png",
-      "prices": [{ "name": "Full-Auto Mod Kit", "priceUSD": 22.9 }]
+      "prices": [
+        { "name": "Airsoft Full-Auto Conversion Kit", "priceUSD": 59.99 }
+      ]
     }
   ]
 }

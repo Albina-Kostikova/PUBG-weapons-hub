@@ -11,8 +11,8 @@
       "attachableTo": ["AR", "DMR", "LMG"],
       "image": "/img/AR_Compensator.png",
       "prices": [
-        { "name": "PTS AR/DMR Compensator Airsoft", "priceUSD": 14.9 },
-        { "name": "Metal Tactical Compensator AR", "priceUSD": 19.9 }
+        { "name": "PTS Griffin Armament Compensator", "priceUSD": 39.99 },
+        { "name": "CNC Aluminum Tactical Compensator", "priceUSD": 29.99 }
       ]
     },
     {
@@ -26,8 +26,8 @@
       "attachableTo": ["SMG"],
       "image": "/img/SMGCompensator.png",
       "prices": [
-        { "name": "SMG Compensator Airsoft", "priceUSD": 12.9 },
-        { "name": "PTS SMG Compensator", "priceUSD": 13.5 }
+        { "name": "SMG CNC Compensator", "priceUSD": 24.99 },
+        { "name": "PTS SMG Tactical Compensator", "priceUSD": 34.99 }
       ]
     },
     {
@@ -41,8 +41,8 @@
       "attachableTo": ["AR", "DMR", "LMG"],
       "image": "/img/ARFlashHider.png",
       "prices": [
-        { "name": "AR/DMR Flash Hider Airsoft", "priceUSD": 10.9 },
-        { "name": "Metal Tactical Flash Hider AR", "priceUSD": 14.5 }
+        { "name": "Birdcage Flash Hider Replica", "priceUSD": 19.99 },
+        { "name": "Steel Tactical Flash Hider", "priceUSD": 27.99 }
       ]
     },
     {
@@ -56,8 +56,8 @@
       "attachableTo": ["SMG"],
       "image": "/img/SMGFlashHider.png",
       "prices": [
-        { "name": "SMG Flash Hider Airsoft", "priceUSD": 9.9 },
-        { "name": "PTS SMG Flash Hider", "priceUSD": 12.5 }
+        { "name": "Compact SMG Flash Hider", "priceUSD": 17.99 },
+        { "name": "PTS SMG Flash Hider", "priceUSD": 26.99 }
       ]
     },
     {
@@ -71,8 +71,8 @@
       "attachableTo": ["AR", "DMR", "LMG"],
       "image": "/img/AR_Suppressor.png",
       "prices": [
-        { "name": "AR/DMR Suppressor Airsoft", "priceUSD": 19.9 },
-        { "name": "Metal Tactical Suppressor AR", "priceUSD": 24.5 }
+        { "name": "SOCOM556 Airsoft Suppressor", "priceUSD": 89.99 },
+        { "name": "Metal Quick Detach Suppressor", "priceUSD": 74.99 }
       ]
     },
     {
@@ -86,8 +86,8 @@
       "attachableTo": ["SMG"],
       "image": "/img/Suppressor.png",
       "prices": [
-        { "name": "SMG Suppressor Airsoft", "priceUSD": 17.9 },
-        { "name": "PTS SMG Suppressor", "priceUSD": 19.5 }
+        { "name": "SMG Compact Suppressor", "priceUSD": 54.99 },
+        { "name": "PTS SMG Mock Suppressor", "priceUSD": 64.99 }
       ]
     },
     {
@@ -101,8 +101,8 @@
       "attachableTo": ["Pistol"],
       "image": "/img/Suppressor.png",
       "prices": [
-        { "name": "Pistol Suppressor Airsoft", "priceUSD": 12.9 },
-        { "name": "PTS Pistol Suppressor", "priceUSD": 14.5 }
+        { "name": "9mm Airsoft Pistol Suppressor", "priceUSD": 34.99 },
+        { "name": "Aluminum Threaded Pistol Suppressor", "priceUSD": 44.99 }
       ]
     },
     {
@@ -115,7 +115,9 @@
       "weight": 2,
       "attachableTo": ["Sniper", "DMR"],
       "image": "/img/Sniper_Compensator.png",
-      "prices": [{ "name": "Sniper Compensator Airsoft", "priceUSD": 18.9 }]
+      "prices": [
+        { "name": "Precision Sniper Brake Replica", "priceUSD": 49.99 }
+      ]
     },
     {
       "id": 9,
@@ -127,7 +129,9 @@
       "weight": 2,
       "attachableTo": ["Sniper", "DMR"],
       "image": "/img/Sniper_FlashHider.png",
-      "prices": [{ "name": "Sniper Flash Hider Airsoft", "priceUSD": 16.9 }]
+      "prices": [
+        { "name": "Sniper Rifle Flash Hider", "priceUSD": 39.99 }
+      ]
     },
     {
       "id": 10,
@@ -139,7 +143,9 @@
       "weight": 2,
       "attachableTo": ["Sniper", "DMR"],
       "image": "/img/Sniper_Suppressor.png",
-      "prices": [{ "name": "Sniper Suppressor Airsoft", "priceUSD": 24.9 }]
+      "prices": [
+        { "name": "Heavy Sniper Suppressor Replica", "priceUSD": 119.99 }
+      ]
     }
   ]
 }

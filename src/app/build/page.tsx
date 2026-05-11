@@ -9,6 +9,7 @@ import stocksData from '@/data/stocks.json'
 import weaponsData from '@/data/weapons.json'
 import { calculateSetupStats, type WeaponSetup } from '@/utils/calculateScore'
 import type { Attachment, Grip, Magazine, Muzzle, Stock, Weapon } from '@/types/items'
+import Image from 'next/image'
 
 type SmallCardItem = {
   name: string
@@ -229,7 +230,9 @@ export default function BuildPage() {
                           disabled={!isAttachable}
                           title={isAttachable ? item.name : 'Не подходит для выбранного оружия'}
                           className={`flex w-full items-center gap-2 text-left ${isAttachable ? '' : 'cursor-not-allowed'}`}>
-                          <img
+                          <Image
+                            width={32}
+                            height={32}
                             src={item.image}
                             alt={item.name}
                             className="h-8 w-8 rounded object-contain scale-120 translate-y-1"
@@ -251,40 +254,52 @@ export default function BuildPage() {
               {selectedWeapon ? (
                 <>
                   {selectedStock && (
-                    <img
+                    <Image
+                      width={80}
+                      height={80}
                       src={selectedStock.image}
                       alt={selectedStock.name}
                       className="pointer-events-none absolute right-[5%] top-[65%] z-0 h-20 w-20 -translate-y-1/2 object-contain opacity-90 md:h-24 md:w-24"
                     />
                   )}
                   {selectedMuzzle && (
-                    <img
+                    <Image
+                      width={64}
+                      height={64}
                       src={selectedMuzzle.image}
                       alt={selectedMuzzle.name}
                       className="pointer-events-none absolute left-[8%] top-[40%] z-20 h-16 w-16 -translate-y-1/2 object-contain md:h-20 md:w-20"
                     />
                   )}
-                  <img
+                  <Image
+                    width={400}
+                    height={200}
                     src={selectedWeapon.image}
                     alt={selectedWeapon.name}
                     className="relative z-10 max-h-44 w-full max-w-xs object-contain md:max-h-52 md:max-w-sm"
                   />
                   {selectedAttachment && (
-                    <img
+                    <Image
+                      width={64}
+                      height={64}
                       src={selectedAttachment.image}
                       alt={selectedAttachment.name}
-                      className="pointer-events-none absolute left-1/2 top-[30%] z-30 h-16 w-16 -translate-x-[8%] -translate-y-1/2 object-contain md:h-20 md:w-20"
+                      className="pointer-events-none absolute left-1/2 top-[30%] z-30 h-16 w-16 translate-x-[-8%] -translate-y-1/2 object-contain md:h-20 md:w-20"
                     />
                   )}
                   {selectedGrip && (
-                    <img
+                    <Image
+                      width={64}
+                      height={64}
                       src={selectedGrip.image}
                       alt={selectedGrip.name}
-                      className="pointer-events-none absolute left-[30%] bottom-[15%] z-20 h-16 w-16 -translate-x-[4%] -translate-y-1/2 object-contain md:h-20 md:w-20"
+                      className="pointer-events-none absolute left-[30%] bottom-[15%] z-20 h-16 w-16 translate-x-[-4%] -translate-y-1/2 object-contain md:h-20 md:w-20"
                     />
                   )}
                   {selectedMagazine && (
-                    <img
+                    <Image
+                      width={64}
+                      height={64}
                       src={selectedMagazine.image}
                       alt={selectedMagazine.name}
                       className="pointer-events-none absolute left-[47%] top-[70%] z-20 h-16 w-16 -translate-x-1/2 -translate-y-1/2 object-contain md:h-20 md:w-20"
@@ -366,7 +381,9 @@ export default function BuildPage() {
                             disabled={!isAttachable}
                             title={isAttachable ? item.name : 'Не подходит для выбранного оружия'}
                             className={`flex w-full items-center gap-2 text-left ${isAttachable ? '' : 'cursor-not-allowed'}`}>
-                            <img
+                            <Image
+                              width={32}
+                              height={32}
                               src={item.image}
                               alt={item.name}
                               className="h-8 w-8 rounded object-contain scale-120 translate-y-1"
@@ -435,7 +452,9 @@ export default function BuildPage() {
                           disabled={!isAttachable}
                           title={isAttachable ? item.name : 'Не подходит для выбранного оружия'}
                           className={`flex w-full items-center gap-2 text-left ${isAttachable ? '' : 'cursor-not-allowed'}`}>
-                          <img
+                          <Image
+                            width={32}
+                            height={32}
                             src={item.image}
                             alt={item.name}
                             className="h-8 w-8 rounded object-contain scale-120 translate-y-1"

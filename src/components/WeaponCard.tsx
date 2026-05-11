@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import { Weapon } from '../types/items'
 
@@ -15,9 +16,11 @@ export default function WeaponCard({ weapon }: Props) {
         <div
           className="relative w-full h-44 rounded-t-2xl overflow-hidden
   bg-[radial-gradient(circle,rgba(255,230,150,0.18)_0%,rgba(255,255,255,0.08)_40%,rgba(0,0,0,0)_70%)]">
-          <img
+          <Image
             src={weapon.image}
             alt={weapon.name}
+            width={240}
+            height={180}
             className="h-[112%] w-full -translate-y-2 object-contain scale-130 transition duration-300 group-hover:scale-130"
           />
           <div

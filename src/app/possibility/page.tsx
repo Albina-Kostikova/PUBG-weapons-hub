@@ -1,8 +1,9 @@
+import Image from 'next/image'
+
 type MapGuide = {
   id: string
   name: string
   image: string
-  terrain: string
   pace: string
   lootLevel: string
   summary: string
@@ -15,10 +16,10 @@ const mapGuides: MapGuide[] = [
     id: 'erangel',
     name: 'Erangel',
     image: '/img/ERANGELmap.png',
-    terrain: 'Классический баланс полей, холмов и городов',
     pace: 'Универсальный темп для AR + DMR',
     lootLevel: 'Стабильный лут по всей карте',
-    summary: 'Классическая карта для ровного темпа, где важны позиционка, ранний лут и грамотная ротация.',
+    summary:
+      'Самая классическая карта PUBG, где важны грамотная ротация, контроль позиций и понимание таймингов зоны. Здесь хватает как открытых пространств для дальних перестрелок, так и городов для напряжённых ближних боёв. Карта отлично подходит игрокам, которые любят сбалансированный геймплей и возможность адаптироваться под любую ситуацию.',
     dropZones: ['Pochinki', 'School', 'Sosnovka Military Base', 'Georgopol'],
     hiddenSpots: [
       'Severny с тихим стартом на севере',
@@ -30,10 +31,10 @@ const mapGuides: MapGuide[] = [
     id: 'miramar',
     name: 'Miramar',
     image: '/img/MIRAMARmap.png',
-    terrain: 'Пустыня с длинными прострелами и редким укрытием',
     pace: 'Много дальних перестрелок и игры от позиции',
     lootLevel: 'Сильный лут в городах и на возвышенностях',
-    summary: 'Открытая пустыня с длинными линиями обзора и акцентом на аккуратное перемещение между укрытиями.',
+    summary:
+      'Miramar — карта для любителей дальнего боя, точной стрельбы и аккуратного перемещения между укрытиями. Большие открытые пространства делают любую ошибку в ротации опасной, а возвышенности часто дают серьёзное преимущество по информации и углам обзора. Здесь особенно ценятся DMR, снайперские винтовки и умение заранее просчитывать маршрут движения.',
     dropZones: ['Hacienda del Patron', 'Los Leones', 'Pecado', 'Power Grid'],
     hiddenSpots: [
       'Небольшие дома к северу от Pecado',
@@ -45,10 +46,10 @@ const mapGuides: MapGuide[] = [
     id: 'sanhok',
     name: 'Sanhok',
     image: '/img/SANHOKmap.png',
-    terrain: 'Плотные джунгли, короткие ротации и частые файты',
     pace: 'Агрессивный ближний и средний бой',
     lootLevel: 'Очень быстрый стартовый лут',
-    summary: 'Компактная карта с быстрыми стычками, частыми третьими сторонами и минимальным временем на подготовку.',
+    summary:
+      'Sanhok предлагает максимально быстрый и агрессивный темп матчей с постоянными перестрелками и минимальными паузами. Из-за компактного размера карты игроки часто сталкиваются уже в первые минуты после высадки, а густая растительность создаёт идеальные условия для неожиданных атак и третьих сторон. Эта карта отлично подходит тем, кто любит экшен и динамичные файты.',
     dropZones: ['Bootcamp', 'Paradise Resort', 'Pai Nan', 'Ruins'],
     hiddenSpots: [
       'Лагерь у реки западнее Pai Nan',
@@ -60,10 +61,10 @@ const mapGuides: MapGuide[] = [
     id: 'vikendi',
     name: 'Vikendi',
     image: '/img/VIKENDImap.png',
-    terrain: 'Снег, возвышенности и смешанные открытые зоны',
     pace: 'Чередование ближнего боя и контроля дальних углов',
     lootLevel: 'Хороший лут в центральных POI',
-    summary: 'Сбалансированная снежная карта, где каждый матч быстро меняет дистанции и темп столкновений.',
+    summary:
+      'Vikendi сочетает в себе снежные открытые участки, возвышенности и плотные зоны с большим количеством укрытий. Матчи на этой карте часто меняют темп: спокойная ротация может резко перейти в серию ближних перестрелок в зданиях или на склонах. Благодаря разнообразию ландшафта игрокам приходится быстро адаптироваться под меняющуюся дистанцию боя.',
     dropZones: ['Castle', 'Cosmodrome', 'Villa', 'Cement Factory'],
     hiddenSpots: [
       'Dino Park с обходом по внешнему кольцу',
@@ -75,10 +76,10 @@ const mapGuides: MapGuide[] = [
     id: 'taego',
     name: 'Taego',
     image: '/img/TAEGOmap.png',
-    terrain: 'Широкие поля, деревни и много перестрелок на ротации',
     pace: 'Средне-дальний бой с частыми сменами позиции',
     lootLevel: 'Мощные споты с хорошим шансом собрать полный набор',
-    summary: 'Большая и динамичная карта, где опасность приходит не только на дропе, но и во время любой ротации.',
+    summary:
+      'Taego выделяется своими широкими пространствами, длинными ротациями и высоким темпом столкновений по всей карте. Даже после спокойного старта игроки постоянно рискуют попасть под огонь во время передвижения между зонами. Карта поощряет активный поиск выгодных позиций, контроль транспорта и быструю реакцию на изменение ситуации.',
     dropZones: ['Terminal', 'Palace', 'Ho San', 'Wol Song'],
     hiddenSpots: [
       'Рисовые поля с малыми домами восточнее Palace',
@@ -90,10 +91,10 @@ const mapGuides: MapGuide[] = [
     id: 'deston',
     name: 'Deston',
     image: '/img/DESTONmap.png',
-    terrain: 'Вертикальные города, болота и большие открытые зоны',
     pace: 'Резкие переходы от вертикального ближнего боя к дальнему контролю',
     lootLevel: 'Высокий уровень лута в крупных городских кластерах',
-    summary: 'Городская вертикальность и широкие открытые куски заставляют постоянно менять стиль передвижения.',
+    summary:
+      'Deston сочетает современные городские зоны с вертикальным геймплеем и большими открытыми территориями для дальних перестрелок. Игрокам приходится постоянно менять стиль игры: от зачистки зданий и крыш до контроля открытых направлений и ротаций. Карта особенно хорошо раскрывается при командной игре и грамотном использовании высоты.',
     dropZones: ['Ripton', 'Arena', 'Buxley', 'Assembly'],
     hiddenSpots: [
       'Крытые улицы на окраине Ripton',
@@ -105,11 +106,10 @@ const mapGuides: MapGuide[] = [
     id: 'rondo',
     name: 'Rondo',
     image: '/img/RONDOmap.png',
-    terrain: 'Смешанная карта с городами, холмами и длинными ротациями',
     pace: 'Тактический темп, где важны универсальные связки',
     lootLevel: 'Много сильных зон для лута в городской части',
     summary:
-      'Тактическая карта с длинными переходами, крупными точками интереса и большим значением ранней информации.',
+      'Rondo делает акцент на тактическом перемещении, контроле информации и грамотном выборе маршрутов. Большие расстояния между ключевыми точками интереса заставляют заранее продумывать ротации и следить за позициями противников. Карта хорошо подходит игрокам, предпочитающим размеренный, но напряжённый стиль игры с упором на позиционное преимущество.',
     dropZones: ['Jadena City', 'Stadium', 'Rin Jiang', 'Mey Ran'],
     hiddenSpots: [
       'Внешние кварталы Jadena City',
@@ -135,8 +135,7 @@ export default function PossibilityPage() {
               </h1>
 
               <p className="pubg-subtitle mt-5 max-w-2xl text-base leading-7 md:text-lg">
-                Большие схемы карт, короткие ориентиры по стилю игры и ключевые точки, куда прыгать в начале
-                катки.
+                Большие схемы карт, короткие ориентиры по стилю игры и ключевые точки, куда прыгать в начале катки.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -163,7 +162,9 @@ export default function PossibilityPage() {
                   key={map.id}
                   href={`#${map.id}`}
                   className="group relative overflow-hidden rounded-[15px] border border-[#363636] bg-[#171717]">
-                  <img
+                  <Image
+                    width={1200}
+                    height={800}
                     src={map.image}
                     alt={map.name}
                     loading={index < 2 ? 'eager' : 'lazy'}
@@ -207,7 +208,8 @@ export default function PossibilityPage() {
               className="scroll-mt-36 overflow-hidden rounded-2xl border border-[#2f2f2f] bg-[#111111] shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
               <div className="grid gap-0 lg:grid-cols-[1.35fr_0.65fr]">
                 <div className="relative min-h-70 border-b border-[#2b2b2b] lg:min-h-[78vh] lg:border-r lg:border-b-0">
-                  <img
+                  <Image
+                    fill
                     src={map.image}
                     alt={map.name}
                     loading={index === 0 ? 'eager' : 'lazy'}
@@ -231,10 +233,11 @@ export default function PossibilityPage() {
                   <div>
                     <div className="grid gap-4">
                       <div className="rounded-xl border border-[#2d2d2d] bg-[#171717] p-5">
-                        <p className="text-base font-bold uppercase tracking-[0.22em] text-yellow-400">
-                          Стратегия
+                        <p className="text-base font-bold uppercase tracking-[0.22em] text-yellow-400">Обзор карты</p>
+                        <p className="mt-3 text-base leading-7 text-[#e2e2e2]">{map.summary}</p>
+                        <p className="text-base mt-5 font-bold uppercase tracking-[0.22em] text-yellow-400">
+                          Главные точки
                         </p>
-                        <p className="mt-3 text-base leading-7 text-[#e2e2e2]">{map.pace}</p>
                         <div className="mt-4 flex flex-wrap gap-2">
                           {map.dropZones.map(zone => (
                             <span
@@ -245,14 +248,6 @@ export default function PossibilityPage() {
                           ))}
                         </div>
                       </div>
-                      <div className="rounded-xl border border-[#2d2d2d] bg-[#171717] p-5">
-                        <p className="text-base font-bold uppercase tracking-[0.22em] text-yellow-400">
-                          Особенности
-                        </p>
-                        <p className="mt-3 text-base leading-7 text-[#e2e2e2]">{map.terrain}</p>
-                        <p className="mt-2 text-base leading-7 text-[#d2d2d2]">{map.summary}</p>
-                      </div>
-
                     </div>
                   </div>
 

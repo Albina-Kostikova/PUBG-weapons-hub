@@ -10,8 +10,8 @@
       "attachableTo": ["AR", "DMR"],
       "image": "/img/extendedMag-ar.png",
       "prices": [
-        { "name": "PTS Extended Magazine AR/DMR", "priceUSD": 12.9 },
-        { "name": "Airsoft Extended AR Magazine", "priceUSD": 9.9 }
+        { "name": "PTS EPM1 Extended Magazine", "priceUSD": 34.99 },
+        { "name": "Metal AR Mid-Cap Extended Magazine", "priceUSD": 27.99 }
       ]
     },
     {
@@ -24,8 +24,8 @@
       "attachableTo": ["SMG"],
       "image": "/img/ExtendedMag_smg_pistols.png",
       "prices": [
-        { "name": "SMG Airsoft Extended Magazine", "priceUSD": 8.9 },
-        { "name": "PTS SMG Extended Magazine", "priceUSD": 11.5 }
+        { "name": "SMG Extended Mid-Cap Magazine", "priceUSD": 24.99 },
+        { "name": "PTS SMG Extended Magazine", "priceUSD": 29.99 }
       ]
     },
     {
@@ -38,8 +38,8 @@
       "attachableTo": ["Pistol"],
       "image": "/img/ExtendedMag_smg_pistols.png",
       "prices": [
-        { "name": "Airsoft Pistol Extended Magazine", "priceUSD": 6.9 },
-        { "name": "PTS Pistol Extended Magazine", "priceUSD": 7.5 }
+        { "name": "Extended Gas Pistol Magazine", "priceUSD": 39.99 },
+        { "name": "CO2 Extended Pistol Magazine", "priceUSD": 44.99 }
       ]
     },
     {
@@ -52,8 +52,8 @@
       "attachableTo": ["AR", "DMR"],
       "image": "/img/quickdrawMag_ar.png",
       "prices": [
-        { "name": "Quickdraw AR Magazine Airsoft", "priceUSD": 13.9 },
-        { "name": "PTS Quickdraw Magazine AR/DMR", "priceUSD": 14.5 }
+        { "name": "Fast-Pull AR Magazine", "priceUSD": 31.99 },
+        { "name": "PTS Quickdraw AR Magazine", "priceUSD": 36.99 }
       ]
     },
     {
@@ -66,8 +66,8 @@
       "attachableTo": ["SMG"],
       "image": "/img/quickdrawMag_smg_pistols.png",
       "prices": [
-        { "name": "Quickdraw SMG Magazine Airsoft", "priceUSD": 12.9 },
-        { "name": "PTS Quickdraw SMG Magazine", "priceUSD": 13.5 }
+        { "name": "Quickdraw SMG Mid-Cap", "priceUSD": 22.99 },
+        { "name": "PTS SMG Speed Magazine", "priceUSD": 27.99 }
       ]
     },
     {
@@ -80,8 +80,8 @@
       "attachableTo": ["Pistol"],
       "image": "/img/quickdrawMag_smg_pistols.png",
       "prices": [
-        { "name": "Quickdraw Pistol Magazine Airsoft", "priceUSD": 7.9 },
-        { "name": "PTS Quickdraw Pistol Magazine", "priceUSD": 8.5 }
+        { "name": "Fast Reload Pistol Magazine", "priceUSD": 34.99 },
+        { "name": "PTS Speed Pistol Magazine", "priceUSD": 39.99 }
       ]
     },
     {
@@ -93,7 +93,9 @@
       "weight": 2,
       "attachableTo": ["Sniper"],
       "image": "/img/extendedMag_Snipers.png",
-      "prices": [{ "name": "Sniper Extended Magazine Replica", "priceUSD": 14.9 }]
+      "prices": [
+        { "name": "Sniper Rifle Extended Magazine", "priceUSD": 49.99 }
+      ]
     },
     {
       "id": 8,
@@ -104,7 +106,9 @@
       "weight": 2,
       "attachableTo": ["Sniper"],
       "image": "/img/quickdrawMag_snipers.png",
-      "prices": [{ "name": "Sniper Quickdraw Magazine Replica", "priceUSD": 13.9 }]
+      "prices": [
+        { "name": "Sniper Fast Reload Magazine", "priceUSD": 44.99 }
+      ]
     },
     {
       "id": 9,
@@ -115,7 +119,9 @@
       "weight": 2,
       "attachableTo": ["AR", "DMR"],
       "image": "/img/extendedQuickdrawMag-ar.png",
-      "prices": [{ "name": "AR/DMR Extended Quickdraw Magazine", "priceUSD": 16.9 }]
+      "prices": [
+        { "name": "AR Extended Quickdraw Magazine", "priceUSD": 39.99 }
+      ]
     },
     {
       "id": 10,
@@ -126,7 +132,9 @@
       "weight": 1,
       "attachableTo": ["SMG", "Pistol"],
       "image": "/img/extended_quickdraw_smg_pistols.png",
-      "prices": [{ "name": "SMG/Pistol Extended Quickdraw Magazine", "priceUSD": 14.9 }]
+      "prices": [
+        { "name": "SMG/Pistol Extended Speed Magazine", "priceUSD": 32.99 }
+      ]
     },
     {
       "id": 11,
@@ -137,7 +145,9 @@
       "weight": 2,
       "attachableTo": ["Sniper"],
       "image": "/img/extendedQuickdrawMag_snipets.png",
-      "prices": [{ "name": "Sniper Extended Quickdraw Magazine", "priceUSD": 15.9 }]
+      "prices": [
+        { "name": "Sniper Extended Speed Magazine", "priceUSD": 54.99 }
+      ]
     },
     {
       "id": 12,
@@ -148,7 +158,9 @@
       "weight": 3,
       "attachableTo": ["AR"],
       "image": "/img/Mini_Drum_Mag_AR.png",
-      "prices": [{ "name": "Mini Drum Magazine AR Replica", "priceUSD": 19.9 }]
+      "prices": [
+        { "name": "AR Drum Magazine Replica", "priceUSD": 79.99 }
+      ]
     },
     {
       "id": 13,
@@ -159,7 +171,9 @@
       "weight": 1,
       "attachableTo": ["Shotgun"],
       "image": "/img/Shotgun_Quick_Loader.png",
-      "prices": [{ "name": "Shotgun Quick Loader", "priceUSD": 11.9 }]
+      "prices": [
+        { "name": "Tactical Shotgun Shell Loader", "priceUSD": 24.99 }
+      ]
     }
   ]
 }

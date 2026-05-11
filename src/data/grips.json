@@ -10,8 +10,8 @@
       "attachableTo": ["AR", "SMG", "DMR", "LMG"],
       "image": "/img/foregrip_Vertical.png",
       "prices": [
-        { "name": "PTS EPF2‑S Vertical Foregrip", "priceUSD": 24.9 },
-        { "name": "Generic Tactical Vertical Grip", "priceUSD": 12.99 }
+        { "name": "PTS EPF2-S Vertical Foregrip", "priceUSD": 34.99 },
+        { "name": "CNC Tactical Vertical Grip", "priceUSD": 24.99 }
       ]
     },
     {
@@ -24,9 +24,9 @@
       "attachableTo": ["AR", "SMG", "DMR", "LMG"],
       "image": "/img/foregrip_Angled.png",
       "prices": [
-        { "name": "MP AFG‑2 Angled Foregrip", "priceUSD": 7.9 },
-        { "name": "Magpul M‑LOK AFG", "priceUSD": 32.9 },
-        { "name": "Leapers Ultra Slim Angled Foregrip", "priceUSD": 47.9 }
+        { "name": "Magpul AFG-2 Angled Foregrip", "priceUSD": 39.99 },
+        { "name": "Leapers UTG Angled Grip", "priceUSD": 29.99 },
+        { "name": "M-LOK Polymer Angled Grip", "priceUSD": 19.99 }
       ]
     },
     {
@@ -38,7 +38,9 @@
       "adsSpeed": -5,
       "attachableTo": ["AR", "SMG", "DMR", "LMG"],
       "image": "/img/HalfGrip.png",
-      "prices": [{ "name": "Ergonomic Pointing Foregrip", "priceUSD": 17.9 }]
+      "prices": [
+        { "name": "Ergonomic Hybrid Foregrip", "priceUSD": 27.99 }
+      ]
     },
     {
       "id": 4,
@@ -49,7 +51,9 @@
       "adsSpeed": 15,
       "attachableTo": ["AR", "SMG", "DMR", "LMG"],
       "image": "/img/ThumbGrip.png",
-      "prices": [{ "name": "FMA Foldable Grip", "priceUSD": 21.9 }]
+      "prices": [
+        { "name": "FMA Thumb Stop Grip", "priceUSD": 24.99 }
+      ]
     },
     {
       "id": 5,
@@ -60,7 +64,9 @@
       "adsSpeed": 5,
       "attachableTo": ["AR", "SMG", "DMR", "LMG"],
       "image": "/img/LightGrip.png",
-      "prices": [{ "name": "Lightweight Tactical Grip", "priceUSD": 14.9 }]
+      "prices": [
+        { "name": "Minimalist Lightweight Grip", "priceUSD": 18.99 }
+      ]
     },
     {
       "id": 6,
@@ -71,7 +77,9 @@
       "adsSpeed": 8,
       "attachableTo": ["AR", "SMG", "Pistol"],
       "image": "/img/LaserPointer.png",
-      "prices": [{ "name": "Airsoft Laser Sight", "priceUSD": 19.9 }]
+      "prices": [
+        { "name": "Red Dot Tactical Laser Sight", "priceUSD": 44.99 }
+      ]
     },
     {
       "id": 7,
@@ -82,7 +90,9 @@
       "adsSpeed": 4,
       "attachableTo": ["AR", "SMG", "DMR", "LMG"],
       "image": "/img/Ergonomic_Grip.png",
-      "prices": [{ "name": "Ergonomic Grip Replica", "priceUSD": 18.9 }]
+      "prices": [
+        { "name": "Ergonomic Tactical Foregrip", "priceUSD": 32.99 }
+      ]
     }
   ]
 }
