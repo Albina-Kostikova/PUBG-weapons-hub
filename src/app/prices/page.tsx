@@ -19,7 +19,7 @@ export default function Prices() {
   const [modalItem, setModalItem] = useState<{ item: PriceAttachmentItem; category: ModalCategory } | null>(null)
 
   const renderPrice = (value?: number) =>
-    value !== undefined ? <p className="pubg-price mt-2">Цена: </p> : null
+    value !== undefined ? <p className="pubg-price mt-2">Цена: ${value}</p> : null
 
   return (
     <div className="min-h-screen">
